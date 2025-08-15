@@ -7,7 +7,7 @@
 
 import express from 'express'
 import exitHook from 'async-exit-hook'
-import { CONNECT_DB, GET_DB, CLOSE_DB } from '~/config/mongodb'
+import { CONNECT_DB, CLOSE_DB } from '~/config/mongodb'
 import { env } from '~/config/environment'
 import { APIs_V1 } from '~/routes/v1'
 import { errorHandlingMiddleware } from '~/middlewares/errorHandlingMiddleware'
@@ -38,7 +38,7 @@ const START_SERVER = () => {
   exitHook(() => {
     console.log('4. Disconnecting from MongoDB Cloud Atlas...')
     CLOSE_DB()
-    console.log('4. Disconnected from MongoDB Cloud Atlas')
+    console.log('5. Disconnected from MongoDB Cloud Atlas')
   })
 }
 
